@@ -1,0 +1,81 @@
+{% load static %}
+{% load onePgFolio_extras %}
+<div id="content">
+			<div id="profile" class="section">
+				<div class="column col3">
+					<table id="bioinfo">
+						<tbody>
+							<tr>
+								<td class="odd">Name</td>
+								<td class="even">Aseem Yadav</td>
+							</tr>
+							<tr>
+								<td class="odd">Date of birth</td>
+								<td class="even">26.06.1992</td>
+							</tr>
+							<tr>
+								<td class="odd">Address</td>
+								<td class="even">Gurgaon, India</td>
+							</tr>
+							<tr>
+								<td class="odd">Languages</td>
+								<td class="even">English, Hindi</td>
+							</tr>
+							<tr>
+								<td class="odd">Phone</td>
+								<td class="even">+91 00 000 00 00</td>
+							</tr>
+							<tr>
+								<td class="odd">Website</td>
+								<td class="even">codeceptor.com</td>
+							</tr>
+							<tr>
+								<td class="odd">Email</td>
+								<td class="even">ayadav@codeceptor.com</td>
+							</tr>
+						</tbody>
+					</table>
+					<ul class="social">
+						{% for s,t in both %}
+						<li><a href="{{ s.social_links }}" class="external" target="_blank" ><img src={% static "images/icons/"|ccat:t|ccat:".png" %} alt="{{ t }}" /></a></li>						
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="own_img column col5 pl-50">
+					<img src="{% static "images/personal/personal.jpeg" %}" alt="Aseem Yadav" />
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat. </p>
+					<p><a href="#">Download PDF resume</a></p>
+				</div>
+			</div>			
+			<div id="resume" class="section">
+				<input type="checkbox" name="order" id="sorted_order"><label for="order"> Chronological order</label>
+				{% include "resume.html" %}				   
+			</div> 
+			<div id="contact" class="section">
+				<div class="column col3">
+					<h3>Aseem Yadav</h3>
+					<p>Gurgaon, India</p>
+					<p>Web: codeceptor.com<br />
+						E-mail: ayadav@codeceptor.com</p>
+					<p>Telephone: +91 00 000 000<br />
+						Mobile: +91 00 000 00 00</p>
+				</div>
+				<div class="column col5 pl-50">
+					<h3>Send a message</h3>
+					<form id="contactform" method="post" action="user_feedback/">						
+						{% include "feedback.html" %}						
+						<p class="column col8"><input class="button" type="submit" value="Submit" /></p>
+						<p class="column col8">{% csrf_token %}</p>
+					</form>
+				</div>
+				<!-- 
+					<form id="contactform">
+						<p class="column col4"><label for="name">Name:</label><input type="text" name="name" id="name" placeholder="your full name"/></p>
+						<p class="column col4"><label for="email">E-mail:</label><input type="text" name="email" id="email" placeholder="your email ID"/></p>
+						<p class="column col8"><label for="message">Message:</label><textarea rows="5" name="message" id="message" placeholder="Hey Aseem..."></textarea></p>
+						<p class="column col8"><input class="button" type="button" value="Submit" /></p>
+					</form>	
+				</div> -->
+			</div>
+		</div>
+

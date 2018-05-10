@@ -1,0 +1,15 @@
+*.pyc
+*~
+__pycache__
+.vscode
+db.sqlite3
+/virtual-env
+/Scripts
+/tcl
+/ignore
+/Include
+/Lib
+/assets
+/*.png
+ayadav-onePagePortfolio.txt
+django-resume-template.code-workspace
